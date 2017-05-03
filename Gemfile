@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.8'
+gem 'rails', '5.1.0'
 # Use PostgreSQL
 gem 'pg', '~> 0.20.0'
 # Use SCSS for stylesheets
@@ -22,8 +22,8 @@ gem 'turbolinks'
 # Fix sprockets on the
 gem 'sprockets', '~> 3.7.1'
 
-gem 'devise', '~> 3.5.7'
-gem 'devise_security_extension'
+gem 'devise', github: 'plataformatec/devise'
+gem 'devise_security_extension', github: 'phatworx/devise_security_extension'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
@@ -43,13 +43,14 @@ gem 'invisible_captcha', '~> 0.9.2'
 gem 'cancancan', '~> 1.16.0'
 gem 'social-share-button', '~> 0.10'
 gem 'initialjs-rails', '0.2.0.4'
-gem 'unicorn', '~> 5.3.0'
+gem 'puma'
 gem 'paranoia', '~> 2.3.1'
 gem 'rinku', '~> 2.0.2', require: 'rails_rinku'
 gem 'savon'
 gem 'dalli'
 gem 'rollbar', '~> 2.14.1'
-gem 'delayed_job_active_record', '~> 4.1.0'
+gem 'delayed_job', github: 'dsander/delayed_job', branch: 'rails51'
+gem 'delayed_job_active_record', github: 'gogovan/delayed_job_active_record', branch: 'rails-5.1'
 gem 'daemons'
 gem 'devise-async'
 gem 'newrelic_rpm', '~> 4.1.0.333'
@@ -78,7 +79,6 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.8.0'
   gem 'fuubar'
   gem 'launchy'
-  gem 'quiet_assets'
   gem 'letter_opener_web', '~> 1.3.1'
   gem 'i18n-tasks', '~> 0.9.13'
   gem 'capistrano', '~> 3.8.1',           require: false
@@ -102,6 +102,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '3.3.0'
+  gem 'listen'
 end
 
 eval_gemfile './Gemfile_custom'

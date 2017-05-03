@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
 
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, prepend: true
 
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
