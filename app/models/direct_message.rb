@@ -8,7 +8,7 @@ class DirectMessage < ActiveRecord::Base
   validates :receiver, presence: true
   validate  :max_per_day
 
-  scope :today, lambda { where('DATE(created_at) = ?', Date.today) }
+  scope :today, lambda { where('DATE(created_at) = ?', Time.zone.today) }
 
   def max_per_day
     return if errors.any?

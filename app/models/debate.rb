@@ -13,7 +13,7 @@ class Debate < ActiveRecord::Base
   include ActsAsParanoidAliases
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :geozone
+  belongs_to :geozone, optional: true
   has_many :comments, as: :commentable
 
   validates :title, presence: true
@@ -37,8 +37,9 @@ class Debate < ActiveRecord::Base
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
   scope :featured,                 -> { where("featured_at is not null")}
+
   # Ahoy setup
-  visitable # Ahoy will automatically assign visit_id on create
+  visitable :visit, optional: true # Ahoy will automatically assign visit_id on create
 
   attr_accessor :link_required
 

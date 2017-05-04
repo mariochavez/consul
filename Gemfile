@@ -93,7 +93,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'database_cleaner'
+  gem 'database_cleaner', github: 'DatabaseCleaner/database_cleaner'
   gem 'poltergeist', '~> 1.14.0'
   gem 'coveralls', '~> 0.8.21', require: false
   gem 'email_spec'

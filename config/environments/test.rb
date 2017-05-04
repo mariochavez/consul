@@ -42,4 +42,7 @@ Rails.application.configure do
 
   # Randomize the order test cases are executed.
   config.active_support.test_order = :random
+
+  config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
+  config.action_mailer.asset_host = "http://#{Rails.application.secrets.server_name}"
 end

@@ -7,8 +7,8 @@ class SpendingProposal < ActiveRecord::Base
   acts_as_votable
 
   belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :geozone
-  belongs_to :administrator
+  belongs_to :geozone, optional: true
+  belongs_to :administrator, optional: true
   has_many :valuation_assignments, dependent: :destroy
   has_many :valuators, through: :valuation_assignments
 

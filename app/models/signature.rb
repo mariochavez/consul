@@ -1,6 +1,6 @@
 class Signature < ActiveRecord::Base
-  belongs_to :signature_sheet
-  belongs_to :user
+  belongs_to :signature_sheet, optional: true
+  belongs_to :user, optional: true
 
   validates :document_number, presence: true
   validates :signature_sheet, presence: true

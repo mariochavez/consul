@@ -2,9 +2,9 @@ class Poll
   class Voter < ActiveRecord::Base
     belongs_to :poll
     belongs_to :user
-    belongs_to :geozone
-    belongs_to :booth_assignment
-    belongs_to :officer_assignment
+    belongs_to :geozone, optional: true
+    belongs_to :booth_assignment, optional: true
+    belongs_to :officer_assignment, optional: true
 
     validates :poll_id, presence: true
     validates :user_id, presence: true

@@ -4,8 +4,8 @@ class Poll::PartialResult < ActiveRecord::Base
 
   belongs_to :question, -> { with_hidden }
   belongs_to :author, ->   { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :booth_assignment
-  belongs_to :officer_assignment
+  belongs_to :booth_assignment, optional: true
+  belongs_to :officer_assignment, optional: true
 
   validates :question, presence: true
   validates :author, presence: true

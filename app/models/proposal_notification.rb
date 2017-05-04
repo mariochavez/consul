@@ -1,5 +1,5 @@
 class ProposalNotification < ActiveRecord::Base
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id', optional: true
   belongs_to :proposal
 
   validates :title, presence: true

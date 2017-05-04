@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/DatabaseCleaner/database_cleaner.git
+  revision: bf9e1fe75cb863c0671ac5eb6de9d7d8e14e0cda
+  specs:
+    database_cleaner (1.6.0)
+
+GIT
   remote: git://github.com/dsander/delayed_job.git
   revision: ec16c569ff0af1a71272b87ab8e070f113653c2d
   branch: rails51
@@ -156,7 +162,6 @@ GEM
       tins (~> 1.6)
     daemons (1.2.4)
     dalli (2.7.6)
-    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise-async (0.7.0)
       devise (>= 2.2)
@@ -518,7 +523,7 @@ DEPENDENCIES
   coveralls (~> 0.8.21)
   daemons
   dalli
-  database_cleaner
+  database_cleaner!
   delayed_job!
   delayed_job_active_record!
   devise!

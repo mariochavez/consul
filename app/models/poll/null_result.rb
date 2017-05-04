@@ -3,8 +3,8 @@ class Poll::NullResult < ActiveRecord::Base
   VALID_ORIGINS = %w{ web booth }
 
   belongs_to :author, ->   { with_hidden }, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :booth_assignment
-  belongs_to :officer_assignment
+  belongs_to :booth_assignment, optional: true
+  belongs_to :officer_assignment, optional: true
 
   validates :author, presence: true
   validates :origin, inclusion: {in: VALID_ORIGINS}

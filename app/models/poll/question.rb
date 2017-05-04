@@ -11,7 +11,7 @@ class Poll::Question < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :answers
   has_many :partial_results
-  belongs_to :proposal
+  belongs_to :proposal, optional: true
 
   validates :title, presence: true
   validates :author, presence: true
