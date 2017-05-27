@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'HasOrders' do
+  render_views
 
   class FakeController < ActionController::Base; end
 
@@ -10,11 +11,19 @@ describe 'HasOrders' do
     has_orders -> (c) { ['votes_count', 'flags_count'] }, only: :new
 
     def index
-      render text: "#{@current_order} (#{@valid_orders.join(' ')})"
+      prepend_view_path Rails.root.join('spec', 'fixtures', 'views')
+
+      @data_context = @current_order
+      @data_options = @valid_orders.join(' ')
+      render :index
     end
 
     def new
-      render text: "#{@current_order} (#{@valid_orders.join(' ')})"
+      prepend_view_path Rails.root.join('spec', 'fixtures', 'views')
+
+      @data_context = @current_order
+      @data_options = @valid_orders.join(' ')
+      render :index
     end
   end
 
@@ -29,7 +38,7 @@ describe 'HasOrders' do
   end
 
   it "displays relevance when searching" do
-    get :index, search: 'ipsum'
+    get :index, params: { search: 'ipsum' }
     expect(response.body).to eq('created_at (created_at votes_count flags_count relevance)')
   end
 
@@ -37,7 +46,7 @@ describe 'HasOrders' do
     get :index
     # Since has_orders did valid_options.delete, the first call to :index might remove 'relevance' from
     # the list by mistake.
-    get :index, search: 'ipsum'
+    get :index, params: { search: 'ipsum' }
     expect(response.body).to eq('created_at (created_at votes_count flags_count relevance)')
   end
 
@@ -48,12 +57,12 @@ describe 'HasOrders' do
     end
 
     it "can be changed by the order param" do
-      get :index, order: 'votes_count'
+      get :index, params: { order: 'votes_count' }
       expect(response.body).to eq('votes_count (created_at votes_count flags_count)')
     end
 
     it "defaults to the first one on the list if given a bogus order" do
-      get :index, order: 'foobar'
+      get :index, params: { order: 'foobar' }
       expect(response.body).to eq('created_at (created_at votes_count flags_count)')
     end
   end
