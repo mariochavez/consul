@@ -5,7 +5,7 @@ rvm:
  - "2.4.1"
 cache: bundler
 before_script:
-  - "for i in config/*.example; do cp \"$i\" \"${i/.example}\"; done"
+  - "for i in config/*.sample; do cp \"$i\" \"${i/.sample}\"; done"
   - bundle exec rake db:setup
 script:
   - "bundle exec rake knapsack:rspec"
