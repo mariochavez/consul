@@ -22,7 +22,7 @@ gem 'turbolinks'
 # Fix sprockets on the
 gem 'sprockets', '~> 3.7.1'
 
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise'
 gem 'devise_security_extension', github: 'phatworx/devise_security_extension'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -52,7 +52,6 @@ gem 'rollbar', '~> 2.14.1'
 gem 'delayed_job', github: 'dsander/delayed_job', branch: 'rails51'
 gem 'delayed_job_active_record', github: 'gogovan/delayed_job_active_record', branch: 'rails-5.1'
 gem 'daemons'
-gem 'devise-async'
 gem 'newrelic_rpm', '~> 4.1.0.333'
 gem 'whenever', require: false
 gem 'pg_search'

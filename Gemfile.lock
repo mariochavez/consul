@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/DatabaseCleaner/database_cleaner.git
-  revision: bf9e1fe75cb863c0671ac5eb6de9d7d8e14e0cda
+  revision: 071ee4a7ce21b861329006afc65a250859f0ae7d
   specs:
-    database_cleaner (1.6.0)
+    database_cleaner (1.6.1)
 
 GIT
   remote: git://github.com/dsander/delayed_job.git
@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: git://github.com/gogovan/delayed_job_active_record.git
-  revision: 9d6558a7b76ef0a5af64f137622e60c864ab0d71
+  revision: 3ca88883fe3881fda11174f03261e7e017bc7cf1
   branch: rails-5.1
   specs:
     delayed_job_active_record (4.1.1)
@@ -28,17 +28,6 @@ GIT
     devise_security_extension (0.10.0)
       devise (>= 3.0.0, < 5.0)
       railties (>= 3.2.6, < 6.0)
-
-GIT
-  remote: git://github.com/plataformatec/devise.git
-  revision: cc6a5824089ed2cbd015a6951ce6d43d00264486
-  specs:
-    devise (4.2.1)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.2)
-      responders
-      warden (~> 1.2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -80,8 +69,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (4.0.0)
-      activerecord (>= 4.0)
+    acts-as-taggable-on (5.0.0)
+      activerecord (>= 4.2.8)
     acts_as_votable (0.10.0)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
@@ -110,7 +99,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.11)
-    browser (2.3.0)
+    browser (2.4.0)
     builder (3.2.3)
     bullet (5.5.1)
       activesupport (>= 3.0.0)
@@ -142,13 +131,13 @@ GEM
     ckeditor (4.2.3)
       cocaine
       orm_adapter (~> 0.5.0)
-    climate_control (0.1.0)
+    climate_control (0.2.0)
     cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
-    coffee-rails (4.2.1)
+    coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
+      railties (>= 4.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -162,19 +151,23 @@ GEM
       tins (~> 1.6)
     daemons (1.2.4)
     dalli (2.7.6)
-    debug_inspector (0.0.2)
-    devise-async (0.7.0)
-      devise (>= 2.2)
+    debug_inspector (0.0.3)
+    devise (4.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.2)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.1.5)
     easy_translate (0.5.0)
       json
       thread
       thread_safe
-    email_spec (2.1.0)
+    email_spec (2.1.1)
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
-      mail (~> 2.6.3)
+      mail (~> 2.6)
     errbase (0.0.3)
     erubi (1.6.0)
     erubis (2.7.0)
@@ -202,7 +195,7 @@ GEM
     fuubar (2.2.0)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
-    geocoder (1.4.3)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     groupdate (3.2.0)
@@ -275,7 +268,7 @@ GEM
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
-    minitest (5.10.1)
+    minitest (5.10.2)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -284,10 +277,10 @@ GEM
     net-ssh (4.1.0)
     newrelic_rpm (4.1.0.333)
     nio4r (2.0.0)
-    nokogiri (1.7.1)
+    nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     nori (2.6.0)
-    oauth (0.5.1)
+    oauth (0.5.3)
     oauth2 (1.3.1)
       faraday (>= 0.8, < 0.12)
       jwt (~> 1.0)
@@ -336,7 +329,7 @@ GEM
     powerpack (0.1.1)
     public_suffix (2.0.5)
     puma (3.8.2)
-    rack (2.0.1)
+    rack (2.0.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-attack (5.0.1)
@@ -355,9 +348,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.1.0)
       sprockets-rails (>= 2.0.0)
-    rails-dom-testing (2.0.2)
-      activesupport (>= 4.2.0, < 6.0)
-      nokogiri (~> 1.6)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (5.1.0)
@@ -381,23 +374,23 @@ GEM
     rinku (2.0.2)
     rollbar (2.14.1)
       multi_json
-    rspec-core (3.5.4)
-      rspec-support (~> 3.5.0)
-    rspec-expectations (3.5.0)
+    rspec-core (3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-expectations (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-mocks (3.5.0)
+      rspec-support (~> 3.6.0)
+    rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-rails (3.5.2)
+      rspec-support (~> 3.6.0)
+    rspec-rails (3.6.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.5.0)
-      rspec-expectations (~> 3.5.0)
-      rspec-mocks (~> 3.5.0)
-      rspec-support (~> 3.5.0)
-    rspec-support (3.5.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+      rspec-support (~> 3.6.0)
+    rspec-support (3.6.0)
     rubocop (0.48.1)
       parser (>= 2.3.3.1, < 3.0)
       powerpack (~> 0.1)
@@ -412,7 +405,7 @@ GEM
     safe_yaml (1.0.4)
     safely_block (0.2.0)
       errbase
-    sass (3.4.23)
+    sass (3.4.24)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
       sass (~> 3.1)
@@ -431,13 +424,13 @@ GEM
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
-    simplecov-html (0.10.0)
+    simplecov-html (0.10.1)
     sitemap_generator (5.3.1)
       builder (~> 3.0)
     social-share-button (0.10.0)
       coffee-rails
     socksify (1.7.1)
-    spring (2.0.1)
+    spring (2.0.2)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -457,20 +450,20 @@ GEM
       net-ssh (>= 2.8.0)
     term-ansicolor (1.6.0)
       tins (~> 1.0)
-    terminal-table (1.7.3)
-      unicode-display_width (~> 1.1.1)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
     thor (0.19.4)
     thread (0.2.2)
     thread_safe (0.3.6)
     tilt (2.0.7)
     timecop (0.8.1)
-    tins (1.13.2)
+    tins (1.14.0)
     tolk (2.0.0)
       rails (>= 4.0)
       safe_yaml (>= 0.8.6)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
-    turbolinks-source (5.0.2)
+    turbolinks-source (5.0.3)
     turnout (2.4.0)
       i18n (~> 0.7)
       rack (>= 1.3, < 3)
@@ -480,9 +473,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    unicode-display_width (1.1.3)
+    unicode-display_width (1.2.1)
     uniform_notifier (1.10.0)
-    user_agent_parser (2.3.0)
+    user_agent_parser (2.3.1)
     uuidtools (2.1.5)
     warden (1.2.7)
       rack (>= 1.0)
@@ -498,7 +491,7 @@ GEM
     websocket-extensions (0.1.2)
     whenever (0.9.7)
       chronic (>= 0.6.3)
-    xpath (2.0.0)
+    xpath (2.1.0)
       nokogiri (~> 1.3)
 
 PLATFORMS
@@ -526,8 +519,7 @@ DEPENDENCIES
   database_cleaner!
   delayed_job!
   delayed_job_active_record!
-  devise!
-  devise-async
+  devise
   devise_security_extension!
   email_spec
   factory_girl_rails (~> 4.8.0)
