@@ -2,9 +2,9 @@ language: ruby
 addons:
   postgresql: "9.4"
 rvm:
- - "2.4.1"
+  - "2.4.1"
 cache:
-  - bundler
+  bundler: true
   directories:
     - "travis_phantomjs"
 before_install:
