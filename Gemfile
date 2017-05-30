@@ -31,7 +31,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook', '~> 4.0.0'
 gem 'omniauth-google-oauth2', '~> 0.4.0'
 
-gem 'kaminari', '~> 1.0.1'
+gem 'kaminari', '~> 1.0.1', github: 'mariochavez/kaminari', branch: 'rails5.1-distinct-error'
 gem 'ancestry', '~> 2.2.2'
 gem 'acts-as-taggable-on'
 gem 'responders', '~> 2.4.0'
